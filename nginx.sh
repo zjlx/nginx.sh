@@ -2,7 +2,7 @@
 
 
 sudo apt-get update
-sudo apt-get install -y software-properties-common python-software-properties
+sudo apt-get install -y  git software-properties-common python-software-properties
 sudo add-apt-repository -y ppa:brightbox/ruby-ng
 sudo add-apt-repository -y ppa:chris-lea/redis-server
 sudo add-apt-repository -y ppa:git-core/ppa
@@ -17,28 +17,6 @@ sudo mkdir /build
 fi
 
 cd /build
-
-if [ ! -d gcc-5.3.0 ]; then
- curl -LO http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-5.3.0/gcc-5.3.0.tar.gz
-else
-rm -frv gcc*
- curl -LO http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-5.3.0/gcc-5.3.0.tar.gz
-fi
-tar zxvf gcc-5.3.0.tar.gz
-cd gcc-5.3.0
-./contrib/download_prerequisites
-cd ../
-mkdir build
-cd build
-../gcc-5.3.0/configure --prefix=/usr/local/bin --enable-languages=all --disable-multilib 
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
-export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
-export CPLUS_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
-make
-make install
-cd /build
-
 
 if [ ! -d openssl-1.0.2g ]; then
 curl -LO http://www.openssl.org/source/openssl-1.0.2g.tar.gz
