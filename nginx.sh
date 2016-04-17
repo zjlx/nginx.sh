@@ -139,8 +139,9 @@ make -j12
 sudo make install
 
 
-#cd /root/nginx.sh
-#cp default /etc/nginx/sites-available/
-#cp nginx.conf /etc/nginx/
-#cp 000-default.conf /etc/apache2/sites-available/
-#cp ports.conf /etc/apache2/
+cd /root/nginx.sh
+cp default /etc/nginx/sites-available/
+cp nginx.conf /etc/nginx/
+cp 000-default.conf /etc/apache2/sites-available/
+cp ports.conf /etc/apache2/
+cp apache2.conf /etc/apache2
