@@ -2,15 +2,13 @@
 
 
 sudo apt-get update
-sudo apt-get install -y  git tortoisehg  software-properties-common python-software-properties
+sudo apt-get install -y  git software-properties-common python-software-properties
 sudo add-apt-repository -y ppa:brightbox/ruby-ng
 sudo add-apt-repository -y ppa:chris-lea/redis-server
 sudo add-apt-repository -y ppa:git-core/ppa
-sudo add-apt-repository -y ppa:tortoisehg-ppa/releases
-
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get install -y tortoisehg nginx php5-fpm libssl-dev git ruby2.2 rake curl wget gcc make bison libssl-dev libcurl4-openssl-dev libpcre3 libpcre3-dev libpcre++-dev libgd2-xpm-dev libgeoip-dev libxml2-dev libxslt-dev python-geoip git-core build-essential zlib1g-dev libreadline6-dev bison redis-server autoconf build-essential checkinstall 
+sudo apt-get install -y nginx php5-fpm libssl-dev git ruby2.2 rake curl wget gcc make bison libssl-dev libcurl4-openssl-dev libpcre3 libpcre3-dev libpcre++-dev libgd2-xpm-dev libgeoip-dev libxml2-dev libxslt-dev python-geoip git-core build-essential zlib1g-dev libreadline6-dev bison redis-server autoconf build-essential checkinstall 
 
 
 
@@ -127,6 +125,8 @@ cd /build/nginx
  --with-http_sub_module \
  --with-http_xslt_module \
  --with-ipv6 \
+ --with-http_mp4_module \
+ --with-http_flv_module \
  --with-openssl=/build/openssl-1.0.2g \
  --with-sha1=/usr/local/include/openssl \
  --with-md5=/usr/local/include/openssl \
@@ -139,8 +139,8 @@ make -j12
 sudo make install
 
 
-cd /root/nginx.sh
-cp default /etc/nginx/sites-available/
-cp nginx.conf /etc/nginx/
-cp 000-default.conf /etc/apache2/sites-available/
-cp ports.conf /etc/apache2/
+#cd /root/nginx.sh
+#cp default /etc/nginx/sites-available/
+#cp nginx.conf /etc/nginx/
+#cp 000-default.conf /etc/apache2/sites-available/
+#cp ports.conf /etc/apache2/
